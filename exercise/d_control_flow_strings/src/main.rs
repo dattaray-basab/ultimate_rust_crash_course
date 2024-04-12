@@ -57,7 +57,7 @@ fn double() {
     }
 
     let mut z = 5;
-    if true { 1 } else { 2 }
+    // if true { 1 } else { 2 }
 
     println!(
         "You can double x {} times until x is larger than 500",
