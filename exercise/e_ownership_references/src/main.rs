@@ -47,8 +47,8 @@ fn eat(s: String) -> bool {
 }
 
 fn change(s: &mut String) {
-    if !s.ends_with("s") {
-        s.push_str("s");
+    if !(*s).ends_with("s") {
+        (*s).push_str("s");
     }
 }
 
@@ -59,3 +59,93 @@ fn inspect(s: &String) {
         println!("{} is singular", s);
     }
 }
+
+
+/*
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    // This is an associated function
+    fn new(width: u32, height: u32) -> Rectangle {
+        Rectangle {
+            width,
+            height,
+        }
+    }
+
+    // This is a method that takes a self parameter
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    // Calling the associated function
+    let rect = Rectangle::new(10, 5);
+    println!("Area: {}", rect.area());
+}
+
+
+///////////////
+
+struct Celsius(f64);
+
+impl Celsius {
+    // This is an associated function that converts Celsius to Fahrenheit
+    fn to_fahrenheit(celsius: f64) -> f64 {
+        (celsius * 9.0 / 5.0) + 32.0
+    }
+}
+
+fn main() {
+    let celsius = Celsius(20.0);
+    let fahrenheit = Celsius::to_fahrenheit(20.0);
+    println!("20°C is equal to {:.2}°F", fahrenheit); // Output: 20°C is equal to 68.00°F
+}
+
+///////////////
+use rand::Rng;
+
+struct Dice {
+    sides: u32,
+}
+
+impl Dice {
+    // This is an associated function that rolls the dice and returns a random value
+    fn roll(self: &Dice) -> u32 {
+        let mut rng = rand::thread_rng();
+        rng.gen_range(1..=self.sides)
+    }
+}
+
+fn main() {
+    let six_sided_dice = Dice { sides: 6 };
+    let roll_result = six_sided_dice.roll();
+    println!("You rolled a {}", roll_result);
+}
+
+///////////////
+use rand::Rng;
+
+struct Dice {
+    sides: u32,
+}
+
+impl Dice {
+    // This is an associated function that rolls the dice and returns a random value
+    fn roll(self: &Dice) -> u32 {
+        let mut rng = rand::thread_rng();
+        rng.gen_range(1..=self.sides)
+    }
+}
+
+fn main() {
+    let six_sided_dice = Dice { sides: 6 };
+    let roll_result = six_sided_dice.roll();
+    println!("You rolled a {}", roll_result);
+}
+
+ */
