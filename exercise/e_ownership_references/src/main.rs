@@ -62,3 +62,54 @@ fn inspect(s: &String) {
 
 
 
+/* Associated functions are functions that are associated with a struct or enum, but are not methods. They are called using the :: syntax. They are often used for constructors.
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    // This is an associated function that calculates the area of a rectangle
+    fn area(width: u32, height: u32) -> u32 {
+        width * height
+    }
+}
+
+fn main() {
+    let area = Rectangle::area(10, 5);
+    println!("The area is: {}", area); // Output: The area is: 50
+}
+///////////
+struct Celsius(f64);
+
+impl Celsius {
+    // This is an associated function that converts Celsius to Fahrenheit
+    fn to_fahrenheit(celsius: f64) -> f64 {
+        (celsius * 9.0 / 5.0) + 32.0
+    }
+}
+
+fn main() {
+    let celsius = Celsius(20.0);
+    let fahrenheit = Celsius::to_fahrenheit(20.0);
+    println!("20°C is equal to {:.2}°F", fahrenheit); // Output: 20°C is equal to 68.00°F
+}
+
+
+/////
+struct Celsius(f64);
+
+impl Celsius {
+    // This is an associated function that converts Celsius to Fahrenheit
+    fn to_fahrenheit(celsius: f64) -> f64 {
+        (celsius * 9.0 / 5.0) + 32.0
+    }
+}
+
+fn main() {
+    let celsius = Celsius(20.0);
+    let fahrenheit = Celsius::to_fahrenheit(20.0);
+    println!("20°C is equal to {:.2}°F", fahrenheit); // Output: 20°C is equal to 68.00°F
+}
+
+ */
