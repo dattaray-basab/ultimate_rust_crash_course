@@ -68,9 +68,48 @@ fn main() {
 can be dangerous if not done carefully, 
 as it's easy to accidentally return a reference to a local variable that 
 will be destroyed when the function returns.
-1
-2
-4
  The caller could then end up with an invalid reference. */
+
+/*
+struct Person {
+    name: String,
+    age: u32,
+}
+
+impl Person {
+    // Associated function (uses Self)
+    fn new(name: &str, age: u32) -> Self {
+        Person {
+            name: String::from(name),
+            age,
+        }
+    }
+
+    // Method (uses self)
+    fn greet(&self) {
+        println!("Hello, my name is {} and I'm {} years old.", self.name, self.age);
+    }
+
+    // Method that takes ownership of self
+    fn birthday(self) -> Self {
+        Person {
+            name: self.name,
+            age: self.age + 1,
+        }
+    }
+}
+
+fn main() {
+    // Using the associated function (Self)
+    let person = Person::new("Alice", 30);
+    person.greet(); // Output: Hello, my name is Alice and I'm 30 years old.
+
+    // Using the method (self)
+    let older_person = person.birthday();
+    older_person.greet(); // Output: Hello, my name is Alice and I'm 31 years old.
+}
+
+ */
+
 
 
