@@ -70,7 +70,7 @@ as it's easy to accidentally return a reference to a local variable that
 will be destroyed when the function returns.
  The caller could then end up with an invalid reference. */
 
-/*
+/* self vs Self
 struct Person {
     name: String,
     age: u32,
@@ -109,6 +109,28 @@ fn main() {
     older_person.greet(); // Output: Hello, my name is Alice and I'm 31 years old.
 }
 
+ */
+
+/* Generics and Traits
+fn print-noise<T: Noisy>(item: T) {
+    println!("{}", item.get_noise());
+}
+
+impl Noisy for Dog {
+    fn get_noise(&self) -> String {
+        String::from("Woof!")
+}
+
+impl Noisy for u8 {
+    fn get_noise(&self) -> &str { "Beep!" }
+}
+
+fn main() {
+    let dog = Dog { name: String::from("Rover") };
+    print_noise(dog);
+
+    let number = 5_u8;
+    print_noise(number);
  */
 
 
