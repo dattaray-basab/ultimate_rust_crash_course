@@ -64,4 +64,13 @@ fn main() {
     //println!("Bunny nibbles for awhile: {:?}", carrot);
 }
 
+/* However, the search results also caution that returning references 
+can be dangerous if not done carefully, 
+as it's easy to accidentally return a reference to a local variable that 
+will be destroyed when the function returns.
+1
+2
+4
+ The caller could then end up with an invalid reference. */
+
 
